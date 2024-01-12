@@ -32,7 +32,12 @@ jobs:
         id: plan
         run: terraform plan
         working-directory: ./Terraform-VPC
-      - name: Terraform Apply
-        id: apply
-        run: terraform apply --auto-approve
+      # Comment out the below code to provision infrastracture and comment the deprovision 4 lines.
+      #- name: Terraform apply
+        #id: apply
+        #run: terraform apply --auto-approve 
+        #working-directory: ./Terraform-VPC 
+      - name: Terraform distroy
+        id: distroy
+        run: terraform distroy --auto-approve
         working-directory: ./Terraform-VPC

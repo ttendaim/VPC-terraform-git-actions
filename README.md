@@ -26,22 +26,34 @@ Secrets Management: Secrets are managed using Hashicorp Vault and the database c
 
 
 
+Project Structure
+The project is structured in the following way to manage multiple environments (dev, staging and production) as subdirectories
+
 ├── development
-│   ├── provider.tf
+│   ├── backend.tf
+│   ├── main.tf
+│   ├── terraform.tfvars
+│   └── variables.tf
+├── production
+│   ├── backend.tf
+│   ├── main.tf
+│   ├── terraform.tfvars
+│   └── variables.tf
+├── staging
+│   ├── backend.tf
 │   ├── main.tf
 │   ├── terraform.tfvars
 │   └── variables.tf
 └── modules
-    ├── alb
+    ├── compute
     │   ├── main.tf
     │   ├── outputs.tf
+    │   ├── userdata.sh
     │   └── variables.tf
-    ├── ec2
+    ├── database
     │   ├── main.tf
-    |   ├── data.tf
-    |   ├── output.sh
     │   └── variables.tf
-    ├── sg
+    ├── hashicorp-vault
     │   ├── main.tf
     │   ├── outputs.tf
     │   └── variables.tf
@@ -49,7 +61,12 @@ Secrets Management: Secrets are managed using Hashicorp Vault and the database c
     │   ├── main.tf
     │   ├── outputs.tf
     │   └── variables.tf
-    ├── vpc
+    ├── networking
     │   ├── main.tf
     │   ├── outputs.tf
-    └── └── variables.tf
+    │   └── variables.tf
+    ├── s3
+    │   ├── main.tf
+    │   └── variables.tf
+    └── statelock
+        └── main.tf

@@ -22,51 +22,6 @@ Remote Backend: S3 bucket is configured as a remote backend for storing the Terr
 
 Static Checks: Static checks using terraform validate, and terraform plan are performed to check the formatting, validate configurations, and compare the desired state with the actual state, respectively.
 
-Secrets Management: Secrets are managed using Hashicorp Vault and the database credentials are stored securely in the vault.
+Secrets Management: Secrets are managed using secrets and variables in github to keep credentials are stored securely in the vault.
 
 
-
-Project Structure
-The project is structured in the following way to manage multiple environments (dev, staging and production) as subdirectories
-
-├── development
-│   ├── backend.tf
-│   ├── main.tf
-│   ├── terraform.tfvars
-│   └── variables.tf
-├── production
-│   ├── backend.tf
-│   ├── main.tf
-│   ├── terraform.tfvars
-│   └── variables.tf
-├── staging
-│   ├── backend.tf
-│   ├── main.tf
-│   ├── terraform.tfvars
-│   └── variables.tf
-└── modules
-    ├── compute
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   ├── userdata.sh
-    │   └── variables.tf
-    ├── database
-    │   ├── main.tf
-    │   └── variables.tf
-    ├── hashicorp-vault
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    ├── load-balancer
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    ├── networking
-    │   ├── main.tf
-    │   ├── outputs.tf
-    │   └── variables.tf
-    ├── s3
-    │   ├── main.tf
-    │   └── variables.tf
-    └── statelock
-        └── main.tf

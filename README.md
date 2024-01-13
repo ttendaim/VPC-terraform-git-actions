@@ -1,5 +1,5 @@
 # VPC-terraform-git-actions
-Creating VPC terraform as IAAAC and github actions as CI/CD
+Creating VPC terraform as IAC and github actions as CI/CD
 
 This Terraform project deploys the following infrastructure on AWS:
 A custom VPC having two public. It also has an internet gateway deployed to enable internet traffic within the VPC and route table to which the public subnets are associated.
